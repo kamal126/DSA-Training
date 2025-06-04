@@ -1,5 +1,8 @@
 #include<bits/stdc++.h>
 using namespace std;
+
+// time complexity: O(V^2)
+// Space Complexity: O(V+E)
 class Solution {
   public:
     vector<int> dijkstra(int V, vector<vector<int>> &edges, int src) {
