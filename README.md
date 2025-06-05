@@ -29,7 +29,7 @@ This project is licensed under the MIT License. See the [LICENSE](LICENSE) file 
 | 6    | Binary Search Trees                            | [Link](#)     | Problem 11, Problem 12   | 9/10        | ⏳ Ongoing       |
 | 7    | Heaps                                          | [Link](#)     | Problem 13, Problem 14   | 8/10        | ❗ Waiting       |
 | 8    | Hashing                                        | [Link](#)     | Problem 15, Problem 16   | 9/10        | ❗ Waiting       |
-| 9    | Graphs                                        | [Link](#)     | Problem 17, Problem 18   | 8/10        | ❗ Waiting       |
+| 9    | Graphs                                        | [Link](#)     | Problem 17, Problem 18   | 8/10        | ⏳ Ongoing       |
 | 10   | Backtracking                                   | [Link](#)     | Problem 19, Problem 20   | 9/10        | ❗ Waiting       |
 | 11   | Recursion                                      | [Link](#)     | Problem 21, Problem 22   | 8/10        | ❗ Waiting       |
 | 12   | Sorting Algorithms                             | [Link](#)     | Problem 23, Problem 24   | 9/10        | ❗ Waiting       |
