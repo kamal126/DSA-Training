@@ -43,7 +43,7 @@ int main() {
     cout << "Enter root node: ";
     Node* root = BinaryTree();
 
-    int totalNodes = leavesNodes(root);
+    int totalNodes = countleavesNodes(root);
     cout << "Number of leaf nodes in the binary tree: " << totalNodes << endl;
 
     return 0;
