@@ -29,7 +29,7 @@ Node* BinaryTree() {
 }
 
 // Function to compute the size (number of nodes)
-int leavesNodes(Node* root) {
+int countleavesNodes(Node* root) {
     if (root == NULL)
         return 0;
     
