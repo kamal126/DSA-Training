@@ -36,7 +36,7 @@ int countleavesNodes(Node* root) {
     if(root->left==NULL && root->right== NULL)
         return 1;
     
-    return  leavesNodes(root->left)+leavesNodes(root->right);
+    return  countleavesNodes(root->left)+leavesNodes(root->right);
 }
 
 int main() {
