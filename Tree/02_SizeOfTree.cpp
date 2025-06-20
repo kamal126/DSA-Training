@@ -35,6 +35,15 @@ int size(Node* root) {
     return 1 + size(root->left) + size(root->right);
 }
 
+void treeSize(Node *root, int count){
+    if(!root)
+        return;
+
+    count++;
+    treeSize(root->left,count);
+    treeSize(root->right,count);
+}
+
 int main() {
     cout << "Enter root node: ";
     Node* root = BinaryTree();
