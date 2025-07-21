@@ -12,7 +12,6 @@ class Solution {
         
         int minDiff = INT_MAX;
         // int minEle = INT_MAX, maxEle = INT_MIN;
-        
         // for(int i=0;i<m;i++){
         //     minEle = min(minEle, a[i]);
         //     maxEle = max(maxEle, a[i]);
