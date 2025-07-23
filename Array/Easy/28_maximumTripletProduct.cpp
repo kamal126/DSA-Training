@@ -5,12 +5,32 @@ using namespace std;
 class Solution {
   public:
     long long maxTripletProduct(long long arr[], int n) {
-        
-        long long ans = INT_MIN;
-        
-        sort(arr, arr+n);
-        
-        return max(arr[0]*arr[1]*arr[n-1], arr[n-1]*arr[n-2]*arr[n-3]);
+        long long max1=LLONG_MIN,max2=LLONG_MIN,max3=LLONG_MIN;
+        long long  mini1=LLONG_MAX, mini2=LLONG_MAX;
+
+        for(int i=0;i<n;i++){
+            long long val = arr[i];
+            if(val>max1){
+                max3=max2;
+                max2=max1;
+                max1=val;
+            }else if(val>max2){
+                max3=max2;
+                max2=val;
+            }else if(val>max3){
+                max3=val;
+            }
+
+            // mini1 annd mini2
+            if(val<mini1){
+                mini2 = mini1;
+                mini1 = val;
+            }else if(val <mini2){
+                mini2 = val;
+            }
+        }
+
+        return max(mini1*mini2*max1, max1*max2*max3);
     }
 };
 
