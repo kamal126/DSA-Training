@@ -30,3 +30,29 @@ class Solution {
             return c;
     }
 };
+
+// Approach 2
+int celebrity(vector<vector<int> >& mat) {
+    int n = mat.size();
+    
+    int i=0, j=n-1;
+
+    while(i<j){
+
+        if(mat[i][j]){
+            i++;
+        }else{
+            j--;
+        }
+    }
+
+    int c = i;
+
+    for(int i=0;i<n;i++){
+        if(c==i) continue;
+
+        if(mat[c][i] || !mat[i][c]) return -1;
+    }
+
+    return c;
+}
