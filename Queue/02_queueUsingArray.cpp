@@ -2,9 +2,7 @@
 #include<bits/stdc++.h>
 using namespace std;
 
-/*
-
-The structure of the class is
+// The structure of the class is
 class MyQueue {
 private:
     int arr[100005];
@@ -16,7 +14,7 @@ public :
     void push(int);
     int pop();
 };
- */
+
 
 // Function to push an element x in a queue.
 void MyQueue ::push(int x) {
