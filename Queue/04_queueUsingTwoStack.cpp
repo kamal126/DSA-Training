@@ -1,4 +1,6 @@
-/* The structure of the class is
+#include <bits/stdc++.h>
+using namespace std;
+/* The structure of the class is*/
 class StackQueue{
 private:
     // These are STL stacks ( http://goo.gl/LxlRZQ )
@@ -7,7 +9,7 @@ private:
 public:
     void push(int);
     int pop();
-}; */
+}; 
 void StackQueue::push(int B) {
     while(!s2.empty()){
         s1.push(s2.top()); s2.pop();
