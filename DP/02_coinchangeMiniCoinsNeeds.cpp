@@ -5,14 +5,15 @@ using namespace std;
 class Solution
 {
 public:
-    int find(int idx, vector<int> &coins, int sum, vector<vector<int>>&dp)
+    int find(int idx, vector<int> &coins, int sum, vector<vector<int>> &dp)
     {
         if (sum == 0)
             return 0;
         if (idx < 0 || sum < 0)
             return 1e9;
-        
-        if(dp[idx][sum]!=-1) return dp[idx][sum];
+
+        if (dp[idx][sum] != -1)
+            return dp[idx][sum];
 
         if (coins[idx] > sum)
             return dp[idx][sum] = find(idx - 1, coins, sum, dp);
@@ -24,7 +25,7 @@ public:
     {
         int n = coins.size();
 
-        vector<vector<int>>dp(n+1, vector<int>(sum+1, -1));
+        vector<vector<int>> dp(n + 1, vector<int>(sum + 1, -1));
 
         int ans = find(n - 1, coins, sum, dp);
 
