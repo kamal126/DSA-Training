@@ -29,6 +29,6 @@ class Solution{
             }
         }
 
-        return idx == -1 ? -1 : N-idx+1;
+        return idx == -1 ? 0 : N-idx+1;
     }
 };
