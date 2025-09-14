@@ -25,11 +25,64 @@ class Solution{
 
     int lengthOfLIS(vector<int>& nums) {
         n= nums.size();
-        vector<vector<int>>dp(n+1, vector<int>(n+1, -1));
+        vector<int>dp;
 
-        return LIS(0, nums, -1, dp);
+        for(int x : nums){
+            auto it = lower_bound(dp.begin(), dp.end(), x);
+
+            if(it == dp.end()){
+                dp.push_back(x);
+            }else{
+                *it = x;
+            }
+
+        }
+
+        return dp.size();
     }
-    // =============================================
+
+
+    // int lengthOfLIS(vector<int>& nums) {
+    //     n= nums.size();
+    //     vector<int>dp(n,1);
+
+    //     int maxLIS=1;
+    //     for(int i=0;i<n;i++){
+    //         for(int j=0;j<i;j++){
+    //             if(nums[i] > nums[j]){
+    //                 dp[i] = max(dp[i], dp[j]+1);
+    //             }
+    //             maxLIS = max(maxLIS, dp[i]);
+    //         } 
+    //     }
+
+    //     return maxLIS;
+    // }
+    
+    // int lengthOfLIS(vector<int>& nums) {
+    //     n= nums.size();
+    //     vector<int>dp(n,1);
+
+    //     int maxLIS=1;
+    //     for(int i=0;i<n;i++){
+    //         for(int j=0;j<i;j++){
+    //             if(nums[i] > nums[j]){
+    //                 dp[i] = max(dp[i], dp[j]+1);
+    //             }
+    //             maxLIS = max(maxLIS, dp[i]);
+    //         } 
+    //     }
+
+    //     return maxLIS;
+    // }
+
+    // int lengthOfLIS(vector<int>& nums) {
+    //     n= nums.size();
+    //     vector<vector<int>>dp(n+1, vector<int>(n+1, -1));
+
+    //     return LIS(0, nums, -1, dp);
+    // }
+
     // int lengthOfLIS(vector<int>& nums) {
     //     n= nums.size();
 
