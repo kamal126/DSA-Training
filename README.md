@@ -26,8 +26,8 @@ This project is licensed under the MIT License. See the [LICENSE](LICENSE) file 
 | 3    | Linked Lists                                   | [Link](#)     | Problem 5, Problem 6     | 9/10        | ✅ Done          |
 | 4    | Stacks and Queues                             | [Link](#)     | Problem 7, Problem 8     | 9/10        | ✅ Done          |
 | 5    | Trees                                          | [Link](#)     | Problem 9, Problem 10    | 8/10        | ✅ Done          |
-| 6    | Binary Search Trees                            | [Link](#)     | Problem 11, Problem 12   | 9/10        | ⏳ Ongoing       |
-| 7    | Heaps                                          | [Link](#)     | Problem 13, Problem 14   | 8/10        | ❗ Waiting       |
+| 6    | Binary Search Trees                            | [Link](#)     | Problem 11, Problem 12   | 9/10        | ✅ Ongoing       |
+| 7    | Heaps                                          | [Link](#)     | Problem 13, Problem 14   | 8/10        | ✅ Waiting       |
 | 8    | Hashing                                        | [Link](#)     | Problem 15, Problem 16   | 9/10        | ❗ Waiting       |
 | 9    | Graphs                                        | [Link](#)     | Problem 17, Problem 18   | 8/10        | ⏳ Ongoing       |
 | 10   | Backtracking                                   | [Link](#)     | Problem 19, Problem 20   | 9/10        | ❗ Waiting       |
