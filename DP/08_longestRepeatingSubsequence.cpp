@@ -22,20 +22,43 @@ class Solution {
     int LongestRepeatingSubsequence(string &s) {
         // Code here
         n = s.size();
-        vector<vector<int>>dp(n+1, vector<int>(n+1, 0));
+        vector<int>dp(n+1, 0);
+
+        int prevDiagonal, curr;
         
         for(int i=1;i<=n;i++){
+            prevDiagonal = 0;
             for(int j=1;j<=n;j++){
+                curr = dp[j];
                 if(i!=j && s[i-1]==s[j-1]){
-                    dp[i][j] = max(1+dp[i-1][j-1], max(dp[i-1][j], dp[i][j-1]));
+                    dp[j] = 1+prevDiagonal;
                 }else{
-                    dp[i][j] = max(dp[i-1][j], dp[i][j-1]);
+                    dp[j] = max(dp[j], dp[j-1]);
                 }
+                prevDiagonal = curr;
             }
         }
         
-        return dp[n][n];
+        return dp[n];
     }
+    // ===============================================
+    // int LongestRepeatingSubsequence(string &s) {
+    //     // Code here
+    //     n = s.size();
+    //     vector<vector<int>>dp(n+1, vector<int>(n+1, 0));
+        
+    //     for(int i=1;i<=n;i++){
+    //         for(int j=1;j<=n;j++){
+    //             if(i!=j && s[i-1]==s[j-1]){
+    //                 dp[i][j] = max(1+dp[i-1][j-1], max(dp[i-1][j], dp[i][j-1]));
+    //             }else{
+    //                 dp[i][j] = max(dp[i-1][j], dp[i][j-1]);
+    //             }
+    //         }
+    //     }
+        
+    //     return dp[n][n];
+    // }
     // =====================================================================================
     // int LongestRepeatingSubsequence(string &s) {
     //     // Code here
