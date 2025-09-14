@@ -18,13 +18,33 @@ class Solution {
             return dp[i][j] = max(find(i, j+1, s1, s2, dp), find(i+1, j, s1, s2, dp));
         }
     }
+
     int LongestRepeatingSubsequence(string &s) {
         // Code here
         n = s.size();
-        vector<vector<int>>dp(n+1, vector<int>(n+1, -1));
+        vector<vector<int>>dp(n+1, vector<int>(n+1, 0));
         
-        return find(0,0,s,s, dp);
+        for(int i=1;i<=n;i++){
+            for(int j=1;j<=n;j++){
+                if(i!=j && s[i-1]==s[j-1]){
+                    dp[i][j] = max(1+dp[i-1][j-1], max(dp[i-1][j], dp[i][j-1]));
+                }else{
+                    dp[i][j] = max(dp[i-1][j], dp[i][j-1]);
+                }
+            }
+        }
+        
+        return dp[n][n];
     }
+    // =====================================================================================
+    // int LongestRepeatingSubsequence(string &s) {
+    //     // Code here
+    //     n = s.size();
+    //     vector<vector<int>>dp(n+1, vector<int>(n+1, -1));
+        
+    //     return find(0,0,s,s, dp);
+    // }
+    // ==========================================================
     // int LongestRepeatingSubsequence(string &s) {
     //     // Code here
     //     n = s.size();
