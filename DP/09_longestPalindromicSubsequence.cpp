@@ -14,13 +14,22 @@ class Solution {
             return max(find(i-1,j, s1, s2), find(i,j-1, s1, s2));
         }
     }
-  
-    int longestPalinSubseq(string &s) {
-        // code here
-        int n = s.size();
-        string rev = s;
-        reverse(rev.begin(), rev.end());
+    // int longestPalinSubseq(string &s) {
+    //     // code here
+    //     int n = s.size();
+    //     vector<vector<int>>dp(n+1, vector<int>(n+1, -1));
+    //     string rev = s;
+    //     reverse(rev.begin(), rev.end());
         
-        return find(n-1,n-1,s,rev);
-    }
+    //     return find(n-1,n-1,s,rev, dp);
+    // }
+  
+    // int longestPalinSubseq(string &s) {
+    //     // code here
+    //     int n = s.size();
+    //     string rev = s;
+    //     reverse(rev.begin(), rev.end());
+        
+    //     return find(n-1,n-1,s,rev);
+    // }
 };
