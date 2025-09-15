@@ -4,25 +4,27 @@ using namespace std;
 
 class Solution {
   public:
-    int find(int i, int j, string &s1, string &s2){
+    int find(int i, int j, string &s1, string &s2, vector<vector<int>>&dp){
         if(i<0 || j<0) return 0;
         
+        if(dp[i][j] != -1) return dp[i][j];
         
         if(s1[i]==s2[j]){
-            return 1+find(i-1, j-1, s1, s2);
+            return dp[i][j] = 1+find(i-1, j-1, s1, s2, dp);
         }else{
-            return max(find(i-1,j, s1, s2), find(i,j-1, s1, s2));
+            return dp[i][j] = max(find(i-1,j, s1, s2, dp), find(i,j-1, s1, s2, dp));
         }
     }
-    // int longestPalinSubseq(string &s) {
-    //     // code here
-    //     int n = s.size();
-    //     vector<vector<int>>dp(n+1, vector<int>(n+1, -1));
-    //     string rev = s;
-    //     reverse(rev.begin(), rev.end());
+    
+    int longestPalinSubseq(string &s) {
+        // code here
+        int n = s.size();
+        vector<vector<int>>dp(n+1, vector<int>(n+1, -1));
+        string rev = s;
+        reverse(rev.begin(), rev.end());
         
-    //     return find(n-1,n-1,s,rev, dp);
-    // }
+        return find(n-1,n-1,s,rev, dp);
+    }
   
     // int longestPalinSubseq(string &s) {
     //     // code here
