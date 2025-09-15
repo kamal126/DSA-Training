@@ -19,22 +19,45 @@ class Solution {
     int longestPalinSubseq(string &s) {
         // code here
         int n = s.size();
-        vector<vector<int>>dp(n+1, vector<int>(n+1, 0));
+        vector<int>dp(n+1, 0);
         string rev = s;
         reverse(rev.begin(), rev.end());
-        
+        int tmp, prev;
         for(int i=1;i<=n; i++){
+            prev=0;
             for(int j=1;j<=n;j++){
+                tmp = dp[j];
                 if(s[i-1] == rev[j-1]){
-                    dp[i][j] = 1+dp[i-1][j-1];
+                    dp[j] = 1+prev;
                 }else{
-                    dp[i][j] = max(dp[i-1][j], dp[i][j-1]);
+                    dp[j] = max(dp[j], dp[j-1]);
                 }
+                prev = tmp;
             }
         }
         
-        return dp[n][n];
+        return dp[n];
     }
+
+    // int longestPalinSubseq(string &s) {
+    //     // code here
+    //     int n = s.size();
+    //     vector<vector<int>>dp(n+1, vector<int>(n+1, 0));
+    //     string rev = s;
+    //     reverse(rev.begin(), rev.end());
+        
+    //     for(int i=1;i<=n; i++){
+    //         for(int j=1;j<=n;j++){
+    //             if(s[i-1] == rev[j-1]){
+    //                 dp[i][j] = 1+dp[i-1][j-1];
+    //             }else{
+    //                 dp[i][j] = max(dp[i-1][j], dp[i][j-1]);
+    //             }
+    //         }
+    //     }
+        
+    //     return dp[n][n];
+    // }
 
     // int longestPalinSubseq(string &s) {
     //     // code here
