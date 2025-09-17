@@ -20,7 +20,7 @@ class Solution {
         // code here
         int n = s.size();
         vector<int>dp(n+1, 0);
-        string rev = s;
+        string rev = s; 
         reverse(rev.begin(), rev.end());
         int tmp, prev;
         for(int i=1;i<=n; i++){
